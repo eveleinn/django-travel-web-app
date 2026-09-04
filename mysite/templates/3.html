@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/3.css' %}">
+
+    <title>Отзывы о турах по России</title>
+</head>
+<body>
+
+<header class="header">
+    <div class="container">
+        <div class="header_">
+            <div class="logo">
+                <img src="{% static 'images/лого.png' %}" alt="Логотип">
+            </div>
+            <nav class="nav">
+                <a class="nav_link" href="{% url 'home' %}">Главная </a>
+                <a class="nav_link" href="{% url 'tours' %}">Туры по России </a>
+                <a class="nav_link" href="{% url 'reviews' %}">Отзывы </a>
+                <a class="nav_link" href="{% url 'contacts' %}">Контакты </a>
+                {% if user.is_authenticated %}
+                <a class="nav_link" href="{% url 'logout' %}?logout=true">Выход</a>
+                {% else %}
+                <a class="nav_link" href="{% url 'auth_view' %}">Вход</a>
+                {% endif %}
+            </nav>
+        </div>
+    </div>
+</header>
+
+<section class="header__">
+    <div class="container">
+        <h1 class="header__title">Туры по России</h1>
+    </div>
+</section>
+
+<div class="page">
+    <div class="container">
+
+        <div class="page_item">
+            <div class="name"><span>Имя:</span> Светлана</div>
+            <div class="mesto"><span>Тур:</span> Восхождение на Эльбрус с юга</div>
+            <div class="com">
+                <span>Комментарий:</span>
+                <div class="text">
+                    Всем привет! Эльбрус - это мое первое восхождение и первый поход в принципе. Что могу сказать – если
+                    вы осознанно подошли к такому виду…отдыха, то больше Вам, как и мне, не захочется ездить ни по каким
+                    морям и замкам и красивостям Европы. Поход способствует полной перезагрузке мозга, а Восхождение
+                    помогает понять, что физические ресурсы организма, если не безграничны, то что-то близкое к этому.
+                    <br>
+                    Хочу поблагодарить компанию ТурРос за эти прекрасные дни! Несмотря на все сложности покорения, мне
+                    очень понравилось!
+                </div>
+            </div>
+            <a href="{% static 'images/Elbrus1.jpg' %}"><img class="photo" src="{% static 'images/Elbrus1.jpg' %}"></a>
+            <a href="{% static 'images/Elbrus2.jpg' %}"><img class="photo" src="{% static 'images/Elbrus2.jpg' %}"></a>
+            <a href="{% static 'images/Elbrus3.jpg' %}"><img class="photo" src="{% static 'images/Elbrus3.jpg' %}"></a>
+            <div class="data"><span>Дата:</span> 13.05.2024</div>
+        </div>
+
+        <div class="page_item">
+            <div class="name"><span>Имя:</span> Наталья</div>
+            <div class="mesto"><span>Тур:</span> Этнотур в Сибирь</div>
+            <div class="com">
+                <span>Комментарий:</span>
+                <div class="text">
+                    Хочу поблагодарить Вас за тур. Пожалуй, это было самое удачное групповое путешествие, где было мало
+                    туристов, и за места в автобусе не дрались. Прекрасная организация и самое главное, удивительные
+                    попутчики. <br> Все сложилось хорошо. Спасибо Вам. Желаю всего доброго!
+                </div>
+            </div>
+            <div class="data"><span>Дата:</span> 11.09.2024</div>
+        </div>
+
+
+        <div class="page_item">
+            <div class="name"><span>Имя:</span> Екатерина</div>
+            <div class="mesto"><span>Тур:</span> Шантарские острова</div>
+            <div class="com">
+                <span>Комментарий:</span>
+                <div class="text">
+                    Я побывала на Шантарах в 2018 году. Спрыгнув из вертолета, я оказалась в свежем тумане, через
+                    который до меня дотрагивалось яркое и ледяное в тех краях Солнце. Лёд на Охотском море только стаял
+                    и наше путешествие к Шантарским островам по воде стало возможным!<br>До сих пор я вспоминаю дыхание
+                    китов, игривых касаток, любопытную нерпу, ждущих рыбу и туристов медведей.<br> Спасибо за такие
+                    открытия и за возможность ТАК КРУТО путешествовать по России и каждый день влюбляться в свою
+                    страну!!!
+                </div>
+            </div>
+            <div class="data"><span>Дата:</span> 05.08.2023</div>
+        </div>
+
+
+        <div class="page_item">
+            <div class="name"><span>Имя:</span> Дарья</div>
+            <div class="mesto"><span>Тур:</span> Круиз на остров Врангеля и Геральд</div>
+            <div class="com">
+                <span>Комментарий:</span>
+                <div class="text">
+                    Поездка прошла прекрасно, особенно интересны были, конечно, животные и ледокол. Природа, конечно,
+                    тоже прекрасна, хоть и очень сурова. С погодой было в целом отлично - потеряли только один день
+                    из-за тумана.
+                    <br>Замечание одно: без совершенного знания английского языка упускаешь очень много информации, в
+                    частности из множества интересных лекций. С русскими гидами удавалось общаться лишь эпизодически.
+                </div>
+            </div>
+            <div class="data"><span>Дата:</span> 13.10.2024</div>
+        </div>
+
+
+        <div class="page_item">
+            <div class="name"><span>Имя:</span> Дмитрий</div>
+            <div class="mesto"><span>Тур:</span> Активный отдых на Байкале</div>
+            <div class="com">
+                <span>Комментарий:</span>
+                <div class="text">
+                    Поездка прошла замечательно! Самое большое впечатление на меня произвел Ольхон. По организации
+                    никаких претензий нет.<br> Есть некоторые вопросы по инфраструктуре и деятельности егерей на местах,
+                    но это к руководству нацпарка, конечно. <br> Ну и по погоде не все было гладко( в частности,
+                    сплавлялись мы под проливным ливнем все 3 дня. Последний факт немного подпортил впечатление, но не
+                    критично. <br> В целом, могу сказать, что остался очень доволен!
+                </div>
+            </div>
+            <div class="data"><span>Дата:</span> 11.09.2024</div>
+        </div>
+
+
+        <div class="page_item">
+            <div class="name"><span>Имя:</span> Николай</div>
+            <div class="mesto"><span>Тур:</span> Путешествие в Чечню и Ингушетию</div>
+            <div class="com">
+                <span>Комментарий:</span>
+                <div class="text">
+                    Мне очень понравилось. Видно, что туризм на Кавказе только стартует, поэтому там именно сейчас
+                    особенно интересно. Больше всего понравились горы. А они в каждый день были разные. Очень
+                    понравились Нихалоевские водопады. Адлан и все люди, которые встречали и сопровождали нас в поездке,
+                    оказались просто замечательными. Без рассказов Адлана поездка была бы не та.
+                </div>
+            </div>
+            {% load static %}
+            <a href="{% static 'images/Chechnya1.jpg' %}"><img class="photo" src="{% static 'images/Chechnya1.jpg' %}"></a>
+            <a href="{% static 'images/Chechnya2.jpg' %}"><img class="photo" src="{% static 'images/Chechnya2.jpg' %}"></a>
+            <a href="{% static 'images/Chechnya3.jpg' %}"><img class="photo" src="{% static 'images/Chechnya3.jpg' %}"></a>
+            <a href="{% static 'images/Chechnya4.jpg' %}"><img class="photo" src="{% static 'images/Chechnya4.jpg' %}"></a>
+
+            <div class="data"><span>Дата:</span> 13.01.2023</div>
+        </div>
+
+
+        <div class="page_item">
+            <div class="name"><span>Имя:</span> Елена</div>
+            <div class="mesto"><span>Тур:</span> Мультиактивный тур в Адыгею</div>
+            <div class="com">
+                <span>Комментарий:</span>
+                <div class="text">
+                    Поездка очень понравилась, спасибо большое. Мало только показалось. Ещё бы недельку-другую там
+                    пожить…<br>Программа тура отличная, действительно соответствует названию.<br> Инструкторы опытные,
+                    интересные люди. В общем, всё супер :) Обязательно еще поеду в подобный тур.
+                </div>
+            </div>
+            <a href="{% static 'images/madygea1.jpg' %}"><img class="photo" src="{% static 'images/madygea1.jpg' %}"></a>
+            <a href="{% static 'images/madygea2.jpg' %}"><img class="photo" src="{% static 'images/madygea2.jpg' %}"></a>
+            <a href="{% static 'images/madygea3.jpg' %}"><img class="photo" src="{% static 'images/madygea3.jpg' %}"></a>
+            <a href="{% static 'images/madygea4.jpg' %}"><img class="photo" src="{% static 'images/madygea4.jpg' %}"></a>
+            <a href="{% static 'images/madygea5.jpg' %}"><img class="photo" src="{% static 'images/madygea5.jpg' %}"></a>
+            <div class="data"><span>Дата:</span> 25.07.2024</div>
+        </div>
+
+
+        <div class="page_item">
+            <div class="name"><span>Имя:</span> Мария</div>
+            <div class="mesto"><span>Тур:</span> Алтай</div>
+            <div class="com">
+                <span>Комментарий:</span>
+                <div class="text">
+                    Поездка прошла замечательно и оставила о себе самые приятные впечатления и воспоминания. <br>Конечно,
+                    особая благодарность нашему гиду - Алексей сумел сплотить группу и буквально заразить всех своей
+                    любовью к этому краю.
+                </div>
+            </div>
+            <a href="{% static 'images/altai1.jpg' %}"><img class="photo" src="{% static 'images/altai1.jpg' %}"></a>
+            <a href="{% static 'images/altai2.jpg' %}"><img class="photo" src="{% static 'images/altai2.jpg' %}"></a>
+            <a href="{% static 'images/altai3.jpg' %}"><img class="photo" src="{% static 'images/altai3.jpg' %}"></a>
+            <a href="{% static 'images/altai4.jpg' %}"><img class="photo" src="{% static 'images/altai4.jpg' %}"></a>
+            <a href="{% static 'images/altai5.jpg' %}"><img class="photo" src="{% static 'images/altai5.jpg' %}"></a>
+            <a href="{% static 'images/altai6.jpg' %}"><img class="photo" src="{% static 'images/altai6.jpg' %}"></a>
+            <div class="data"><span>Дата:</span> 21.09.2024</div>
+        </div>
+
+
+        <div class="page_item">
+            <div class="name"><span>Имя:</span> Ольга</div>
+            <div class="mesto"><span>Тур:</span> Байкальская Одиссея</div>
+            <div class="com">
+                <span>Комментарий:</span>
+                <div class="text">
+                    Огромное Вам спасибо, что нашли возможность втолкнуть меня в последний момент в группу!<br>Всё
+                    прошло великолепно, гид Анастасия - это просто кладезь кругозора, оптимизма, доброжелательности и
+                    любви к своему родному краю и ко всему миру в целом!<br> Теперь точно знаю, что если отпуск ни с кем
+                    не совпал, то можно присоединиться к Вашему туру :)
+                </div>
+            </div>
+            <a href="{% static 'images/odiseya.jpg' %}"><img class="photo" src="{% static 'images/odiseya.jpg' %}"></a>
+            <a href="{% static 'images/odiseya2.jpg' %}"><img class="photo" src="{% static 'images/odiseya2.jpg' %}"></a>
+            <a href="{% static 'images/odiseya3.jpg' %}"><img class="photo" src="{% static 'images/odiseya3.jpg' %}"></a>
+            <div class="data"><span>Дата:</span> 09.06.2024</div>
+        </div>
+
+
+        <div class="page_item">
+            <div class="name"><span>Имя:</span> Максим</div>
+            <div class="mesto"><span>Тур:</span> Приморская кругосветка</div>
+            <div class="com">
+                <span>Комментарий:</span>
+                <div class="text">
+                    Поездка чудесная, команда не просто профессионалов, но людей увлечённых, патриотов в лучшем смысле
+                    этого слова. Юмор инструкторов, объединивший нас, таких разных, сделал нас командой, победившей все
+                    трудности пути. Спасибо всем.
+                </div>
+            </div>
+            <a href="{% static 'images/primorie1.jpg' %}"><img class="photo" src="{% static 'images/primorie1.jpg' %}"></a>
+            <a href="{% static 'images/primorie2.jpg' %}"><img class="photo" src="{% static 'images/primorie2.jpg' %}"></a>
+            <a href="{% static 'images/primorie3.jpg' %}"><img class="photo" src="{% static 'images/primorie3.jpg' %}"></a>
+            <a href="{% static 'images/primorie4.jpg' %}"><img class="photo" src="{% static 'images/primorie4.jpg' %}"></a>
+            <a href="{% static 'images/primorie5.jpg' %}"><img class="photo" src="{% static 'images/primorie5.jpg' %}"></a>
+            <a href="{% static 'images/primorie6.jpg' %}"><img class="photo" src="{% static 'images/primorie6.jpg' %}"></a>
+            <div class="data"><span>Дата:</span> 19.11.2023</div>
+        </div>
+
+
+        <div class="page_item">
+            <div class="name"><span>Имя:</span>Валентина</div>
+            <div class="mesto"><span>Тур:</span> Камчатка</div>
+            <div class="com">
+                <span>Комментарий:</span>
+                <div class="text">
+                    Впечатлений много) все очень понравилось. Именно такой отдых и был нужен. У нас была прекрасная
+                    интернациональная группа, чудесные гиды. Я была одна в этой поездке, но одинокой себя не чувствовала
+                    ни разу. И повезло с погодой. Я очень рада, что решилась поехать.
+                </div>
+            </div>
+            <a href="{% static 'images/kamchatka1.jpg' %}"><img class="photo" src="{% static 'images/kamchatka1.jpg' %}"></a>
+            <a href="{% static 'images/kamchatka2.jpg' %}"><img class="photo" src="{% static 'images/kamchatka2.jpg' %}"></a>
+            <a href="{% static 'images/kamchatka3.jpg' %}"><img class="photo" src="{% static 'images/kamchatka3.jpg' %}"></a>
+            <a href="{% static 'images/kamchatka4.jpg' %}"><img class="photo" src="{% static 'images/kamchatka4.jpg' %}"></a>
+            <a href="{% static 'images/kamchatka5.jpg' %}"><img class="photo" src="{% static 'images/kamchatka5.jpg' %}"></a>
+            <div class="data"><span>Дата:</span> 11.03.2024</div>
+        </div>
+
+
+        <div class="page_item">
+            <div class="name"><span>Имя:</span> Светлана</div>
+            <div class="mesto"><span>Тур:</span> Активный отдых в Адыгее</div>
+            <div class="com">
+                <span>Комментарий:</span>
+                <div class="text">
+                    Все было замечательно! Больше всего запомнился рафтинг и общение с нашим гидом Евгением и другими
+                    туристами. Замечаний толком нет, я все еще под впечатлением.
+                </div>
+            </div>
+            <a href="{% static 'images/Adygea1.jpg' %}"><img class="photo" src="{% static 'images/Adygea1.jpg' %}"></a>
+            <a href="{% static 'images/Adygea2.jpg' %}"><img class="photo" src="{% static 'images/Adygea2.jpg' %}"></a>
+            <a href="{% static 'images/Adygea3.jpg' %}"><img class="photo" src="{% static 'images/Adygea3.jpg' %}"></a>
+            <div class="data"><span>Дата:</span> 10.08.2023</div>
+        </div>
+
+    </div>
+</div>
+
+
+<footer class="footer">
+    <div class="container">
+        <h4 class="footer_title"> Ссылки: </h4>
+        <a class="nav_linka" href="{% url 'home' %}">Главная </a>
+        <a class="nav_linka" href="{% url 'tours' %}">Туры по России </a>
+        <a class="nav_linka" href="{% url 'reviews' %}">Отзывы </a>
+        <a class="nav_linka" href="{% url 'contacts' %}">Контакты </a>
+        <a class="nav_linka" href="{% url 'vhod' %}">Вход </a>
+        <p><h4 class="footer_title"> © 2025 Бутузова Ольга, по всем вопросам пишите по адресу
+        ezarelevelein@gmail.com </h4> </p>
+    </div>
+
+</footer>
+</body>
+</html>

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/4.css' %}">
+    <title>Контакты</title>
+</head>
+<body>
+
+<header class="header">
+    <div class="container">
+        <div class="header_">
+            <div class="logo">
+                <img src="{% static 'images/лого.png' %}" alt="Логотип компании">
+            </div>
+            <nav class="nav">
+                <a class="nav_link" href="{% url 'home' %}">Главная </a>
+                <a class="nav_link" href="{% url 'tours' %}">Туры по России </a>
+                <a class="nav_link" href="{% url 'reviews' %}">Отзывы </a>
+                <a class="nav_link" href="{% url 'contacts' %}">Контакты </a>
+                {% if user.is_authenticated %}
+                <a class="nav_link" href="{% url 'logout' %}?logout=true">Выход</a>
+                {% else %}
+                <a class="nav_link" href="{% url 'auth_view' %}">Вход</a>
+                {% endif %}
+            </nav>
+        </div>
+    </div>
+</header>
+
+<div class="header__">
+    <div class="container">
+        <h1 class="header__title">Туры по России</h1>
+    </div>
+</div>
+
+<div class="page">
+    <div class="str">
+        <div class="block">
+            <h2>Контакты</h2>
+            <span class="span"><i>Телефон:</i></span><br><b>+7 (927) 432-41-11</b><br><br>
+            <span class="span"><i>E-Mail:</i></span><br><b>ezarelevelein@gmail.com</b><br><br>
+
+            <a href="http://vk.com/id172401034" style="margin-left: 25px; al">
+                <img src="{% static 'images/вк.png' %}" width="40" height="40">
+            </a>
+            <a href="http://vk.com/id172401034" style="margin-left: 20px; al">
+                <img src="{% static 'images/Telegram_Messenger.png' %}" width="40" height="40">
+            </a>
+                <a href="viber://chat?number=%2B79001234567" style="margin-left: 20px; al">
+                <img src="{% static 'images/viber.png' %}" width="40" height="40">
+            </a>
+            <a href="https://wa.me/75551234567" style="margin-left: 20px; al">
+                <img src="{% static 'images/whatsapp.png' %}" width="40" height="40">
+            </a>
+
+        </div>
+
+    </div>
+</div>
+
+<footer class="footer">
+    <div class="container">
+        <h4 class="footer_title">Ссылки:</h4>
+        <a class="nav_linka" href="{% url 'home' %}">Главная </a>
+        <a class="nav_linka" href="{% url 'tours' %}">Туры по России </a>
+        <a class="nav_linka" href="{% url 'reviews' %}">Отзывы </a>
+        <a class="nav_linka" href="{% url 'contacts' %}">Контакты </a>
+        <a class="nav_linka" href="{% url 'vhod' %}">Вход </a>
+        <p><h4 class="footer_title">© 2025 Бутузова Ольга, по всем вопросам пишите по адресу
+        ezarelevelein@gmail.com</h4></p>
+    </div>
+</footer>
+
+</body>
+</html>

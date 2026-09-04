@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/1.css' %}">
+
+    <title>Главная</title>
+</head>
+
+<body>
+<header class="header">
+    <div class="container">
+        <div class="header_">
+            <div class="logo">
+                <img src="{% static 'images/лого.png' %}" alt="Логотип компании">
+            </div>
+
+            <nav class="nav">
+                <a class="nav_link" href="{% url 'home' %}">Главная </a>
+                <a class="nav_link" href="{% url 'tours' %}">Туры по России </a>
+                <a class="nav_link" href="{% url 'reviews' %}">Отзывы </a>
+                <a class="nav_link" href="{% url 'contacts' %}">Контакты </a>
+                {% if user.is_authenticated %}
+                <a class="nav_link" href="{% url 'logout' %}?logout=true">Выход</a>
+                {% else %}
+                <a class="nav_link" href="{% url 'auth_view' %}">Вход</a>
+                {% endif %}
+            </nav>
+
+        </div>
+    </div>
+</header>
+
+<section class="header__">
+    <div class="container">
+        <h1 class="header__title">Туры по России</h1>
+    </div>
+</section>
+
+<section class="page">
+    <div class="container">
+        <p style="font-size: 30px;">Рады приветствовать Вас на нашем сайте!</p>
+
+        <p>Мы предлагаем Вам интересный и эксклюзивный продукт, позволяющий увидеть и прочувствовать всю прелесть
+            каждого уголка нашей страны. Мы умело воплощаем в жизнь желания и мечты интересующегося Туриста.</p>
+        <p>Независимое турагентство — это единственный тип турагентств, который отталкивается от потребностей клиента, а
+            не работает на выполнение плана продаж, как это часто происходит во франчайзинговых сетях.</p>
+        <p>Обратившись в нашу компанию, вы гарантированно найдете для себя тот тур, который подходит именно Вам. Вы
+            обязательно ощутите желание совершить это путешествие с нами и поймёте, что именно здесь начинается Ваш вояж
+            по самым интересным и привлекательным местам нашей страны — России.</p>
+
+        <div id="doit">
+            Компания
+            <div id="flip">
+                <div>
+                    <div>Сервис</div>
+                    <div>Качество</div>
+                    <div>Гарантия</div>
+                </div>
+            </div>
+            ТурРос
+        </div>
+
+        <br><br>
+        <img class="photo" src="{% static 'images/222.jpg' %}" alt="Фото туров по России">
+    </div>
+</section>
+
+
+<footer class="footer">
+    <div class="container">
+        <h4 class="footer_title">Ссылки:</h4>
+        <a class="nav_linka" href="{% url 'home' %}">Главная</a>
+        <a class="nav_linka" href="{% url 'tours' %}">Туры по России</a>
+        <a class="nav_linka" href="{% url 'reviews' %}">Отзывы</a>
+        <a class="nav_linka" href="{% url 'contacts' %}">Контакты</a>
+        <a class="nav_linka" href="{% url 'vhod' %}">Вход </a>
+        <p><h4 class="footer_title"> © 2025 Бутузова Ольга, по всем вопросам пишите по адресу
+        ezarelevelein@gmail.com </h4> </p>
+    </div>
+</footer>
+
+</body>
+
+</html>
