@@ -23,6 +23,7 @@
    ```bash
    git clone https://github.com/eveleinn/django-travel-web-app.git
    cd django-travel-web-app
+   cd mysite
    ```
 2. Создайте и активируйте виртуальное окружение:
    **Windows:**
