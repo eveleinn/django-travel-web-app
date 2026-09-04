@@ -178,7 +178,7 @@ CREATE TABLE `auth_user` (
 --
 
 INSERT INTO `auth_user` (`id`, `password`, `last_login`, `is_superuser`, `username`, `first_name`, `last_name`, `email`, `is_staff`, `is_active`, `date_joined`) VALUES
-(1, 'pbkdf2_sha256$260000$Ur75qzRYOv9EBUh5N421uT$zBK2oHxs2Kwtrk1VmMCnw/hbmUTsO2dO+aAiyDh4Jao=', '2026-09-03 15:10:44.161534', 1, 'admin', '', '', 'katyammilova@gmail.com', 1, 1, '2025-04-27 16:09:51.682660'),
+(1, 'pbkdf2_sha256$260000$Ur75qzRYOv9EBUh5N421uT$zBK2oHxs2Kwtrk1VmMCnw/hbmUTsO2dO+aAiyDh4Jao=', '2026-09-03 15:10:44.161534', 1, 'admin', '', '', 'katya@gmail.com', 1, 1, '2025-04-27 16:09:51.682660'),
 (2, 'pbkdf2_sha256$260000$NNrqh7wIvHDGFIMM3PbX0M$hmRuJkeiSlEJqyTjDJZgB0tq3iueUFLieX5LkgWoyyc=', '2025-05-06 11:40:22.912198', 0, 'asd', '', '', 'asdas@gmail.com', 0, 1, '2025-04-27 16:24:02.097752'),
 (3, 'pbkdf2_sha256$260000$UqaU5tf4RmgfUKrmNbD9wq$ovyZyro1D0BacrupoLf/AM4P+GkqdNBRh4o+fVYPUGQ=', '2025-05-14 07:14:59.859329', 0, 'user', '', '', 'user@gmail.com', 0, 1, '2025-04-29 17:30:31.567746'),
 (4, 'pbkdf2_sha256$260000$a2nMkLlAQVRLeeyJalQYCc$VmWGtDskcBp0tVFXR/vcltIl+03A+ZdROdFtQEc4ZdQ=', '2025-05-06 12:06:06.539520', 0, 'uss', '', '', 'ussss234@gmail.com', 0, 1, '2025-05-06 11:40:54.043116');
