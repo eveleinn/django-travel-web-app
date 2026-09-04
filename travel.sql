@@ -118,7 +118,7 @@ CREATE TABLE `auth_permission` (
 --
 -- Дамп данных таблицы `auth_permission`
 --
-
+ 
 INSERT INTO `auth_permission` (`id`, `name`, `content_type_id`, `codename`) VALUES
 (1, 'Can add log entry', 1, 'add_logentry'),
 (2, 'Can change log entry', 1, 'change_logentry'),
